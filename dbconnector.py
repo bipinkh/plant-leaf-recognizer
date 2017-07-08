@@ -7,14 +7,26 @@ user='root'
 passwd=''
 db='plantdb'
 
-def main():
+class main:
+
 	conn = pymysql.connect(host=host, port=port, user=user, passwd=passwd, db=db)
 	cur = conn.cursor()
-	cur.execute("SELECT * FROM plantdetails")
-	print(cur.description)
-	cur.close()
-	conn.close()
+	print("database ready")
 
-if __name__=="__main__":
-	#execute when not called via import
-	main()
+	def getdescription(self,plantname):
+		command = "SELECT description from plantdetails WHERE id="+str(plantname)
+		try:
+			main.cur.execute(command)
+			data=main.cur.fetchone()
+			data=data[0]
+			return data
+		except:
+			return "Error2" #invalid SQL command
+
+	def closedatabase(self):
+		main.cur.close()
+		main.conn.close()
+		print("database closed")
+		return True
+
+

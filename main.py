@@ -23,29 +23,31 @@ from sklearn.cross_validation import train_test_split
 
 
 def main():
+    print("model building started")
     algorithm = build()
     algorithm.buildModel()
-    algorithm.test()
+    algorithm.test("")
 
 
 class build:
     #image dimension
     m,n = 50,50
 
-    def buildModel(self):
-        os.chdir("F:/minorproject/data");
+    def buildModel(self,trainfolderlocation):
+        #os.chdir("F:/minorproject/data");
         # input image dimensions
-        trainfolder="train"
-        classes=os.listdir(trainfolder)
+        os.chdir(trainfolderlocation)
+        #trainfolder="train"
+        classes=os.listdir(trainfolderlocation)
         print(classes)
         x=[]
         y=[]
         for fol in classes: #fol for folder
             print (fol)
-            imgfiles=os.listdir(trainfolder+'/'+fol);
+            imgfiles=os.listdir(trainfolderlocation+'/'+fol);
             for img in imgfiles:
                 if (img != "Thumbs.db"):
-                    im=Image.open(trainfolder+'/'+fol+'/'+img);
+                    im=Image.open(trainfolderlocation+'/'+fol+'/'+img);
                     im=im.convert(mode='RGB')
                     imrs=im.resize((build.m,build.n))
                     imrs=img_to_array(imrs)/255;
@@ -83,30 +85,30 @@ class build:
         self.model.add(Dense(nb_classes));
         self.model.add(Activation('softmax'));
         self.model.compile(loss='categorical_crossentropy',optimizer='adadelta',metrics=['accuracy'])
-        nb_epochs=2;
-        batch_size=18;
+        nb_epochs=1;
+        batch_size=32;
         self.model.fit(x_train,Y_train,batch_size=batch_size,epochs=nb_epochs,verbose=1,validation_data=(x_test, Y_test))
 
-    def test(self):
-        testfolder="test"
-        files=os.listdir(testfolder);
-        img=files[0] 
-        im = Image.open(testfolder + '/' + img);
+    def test(self,testimagepath):
+        #testfolder="test"
+        #files=os.listdir(testfolder);
+        #img=files[0] 
+        #im = Image.open(testfolder + '/' + img);
+        im=Image.open(testimagepath)
         imrs = im.resize((build.m,build.n))
         imrs=img_to_array(imrs)/255;
         imrs=imrs.transpose(2,0,1);
         imrs=imrs.reshape(3,build.m,build.n);
-            
+        
         x=[]
         x.append(imrs)
         x=np.array(x);
-        predictions = self.model.predict(x)
-        print (predictions)
+        try:
+            predictions = self.model.predict(x)
+            return predictions
+        except:
+            return "Error1" #for not buulding model
 
         
 if __name__ == "__main__":
-   # stuff only to run when not called via 'import' here
    main()
-
-#errors
-#thumbs.db >>> https://www.sitepoint.com/switch-off-thumbs-db-in-windows/
