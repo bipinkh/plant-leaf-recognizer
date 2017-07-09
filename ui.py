@@ -2,12 +2,13 @@ from tkinter import Tk, Label, Button, Entry
 from tkinter import IntVar,StringVar
 from tkinter import N, W, E, END, CENTER
 from tkinter import ttk
-from tkinter import filedialog
 from PIL import ImageTk, Image
 import dbconnector
 import main
+import ui2
 
-class LeafRecognition:
+
+class LeafRecognition(ui2.uifunctions):
 
 	def __init__(self, master):
 
@@ -24,7 +25,7 @@ class LeafRecognition:
 		self.filename="Select an image"
 		self.selectedFile_variable=StringVar()
 		self.selectedFile_variable.set(self.filename)
-		self.tab2Text = "Build the model for the first time. It may take a while. Be patient."
+		self.tab2Text = "Build the model. It may take a while. Be patient."
 		self.tab2Text_variable=StringVar()
 		self.tab2Text_variable.set(self.tab2Text)
 		self.trainfolderText = "F:/minorproject/data/train"
@@ -85,54 +86,7 @@ class LeafRecognition:
 		return True
 
 
-	def selectfile(self):
-		self.filename = filedialog.askopenfilename()
-		self.selectedFile_variable.set(self.filename)
-		self.displayimage()
-		return True
-
-	def selectfolder(self):
-		self.trainfolderText = filedialog.askdirectory()
-		self.folderOK=1
-		self.trainfolder_variable.set(self.trainfolderText)
-		return True
-
-
-	def displayimage(self):
-		img2 = Image.open(self.filename)
-		img2 = img2.resize((120,200), Image.ANTIALIAS)
-		img2 = ImageTk.PhotoImage(img2)
-		self.imagePanel.configure(image=img2)
-		self.imagePanel.image=img2
-		return True
-
-	def quitwindow(self):
-		self.source.closedatabase()
-		self.master.quit()
-		return True
-
-	def scan(self):
-		testresult=self.model.test(self.filename)
-		if testresult=="Error1":
-			print("Build the model first")
-		else:
-			testresult=testresult[0]
-			testresult=max(testresult)
-			print (testresult)
-			plantid=1
-			result = self.source.getdescription(plantid)
-			if result=="Error2":
-				print("Invalid SQL Comman")
-				return True
-			print (result)
-		return True
-
-	def buildmodel(self):
-		self.model.buildModel(self.trainfolderText)
-		self.tab2Text_variable.set("Model build complete. You can now identify image.")
-		return True
-
-		
+	
 root = Tk()
 my_gui = LeafRecognition(root)
 root.mainloop()

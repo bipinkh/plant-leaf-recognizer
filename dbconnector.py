@@ -14,7 +14,17 @@ class main:
 	print("database ready")
 
 	def getdescription(self,plantname):
-		command = "SELECT description from plantdetails WHERE id="+str(plantname)
+		command = "SELECT other_names from plantdetails WHERE id="+str(plantname)
+		try:
+			main.cur.execute(command)
+			data=main.cur.fetchone()
+			data=data[0]
+			return data
+		except:
+			return "Error2" #invalid SQL command
+
+	def getname(self,plantname):
+		command = "SELECT name from plantdetails WHERE id="+str(plantname)
 		try:
 			main.cur.execute(command)
 			data=main.cur.fetchone()

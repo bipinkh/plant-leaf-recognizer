@@ -12,6 +12,7 @@ from keras.layers.convolutional import Convolution2D, MaxPooling2D
 from keras.utils import np_utils
 from keras.preprocessing.image import  img_to_array
 from keras import backend as K
+from keras.models import model_from_json
 K.set_image_dim_ordering('th')
 import numpy as np
  # Image manipulations and arranging data
@@ -25,8 +26,8 @@ from sklearn.cross_validation import train_test_split
 def main():
     print("model building started")
     algorithm = build()
-    algorithm.buildModel()
-    algorithm.test("")
+    algorithm.buildModel("F:/minorproject/data/train")
+    algorithm.test("F:/minorproject/data/test/IMG_20170629_123403.jpg")
 
 
 class build:
@@ -85,9 +86,33 @@ class build:
         self.model.add(Dense(nb_classes));
         self.model.add(Activation('softmax'));
         self.model.compile(loss='categorical_crossentropy',optimizer='adadelta',metrics=['accuracy'])
-        nb_epochs=1;
-        batch_size=32;
+        nb_epochs=10;
+        batch_size=16;
         self.model.fit(x_train,Y_train,batch_size=batch_size,epochs=nb_epochs,verbose=1,validation_data=(x_test, Y_test))
+
+    
+    def storemodel(self):
+        # serialize model to JSON
+        model_json = self.model.to_json()
+        with open("F:/minorproject/plantleafrecognition/model/model.json", "w") as json_file:
+            json_file.write(model_json)
+        # serialize weights to HDF5
+        self.model.save_weights("F:/minorproject/plantleafrecognition/model/model.h5")
+        print("Saved model to disk")
+    
+    def reawakemodel(self):
+        try:
+            # load json and create model
+            json_file = open('F:/minorproject/plantleafrecognition/model/model.json', 'r')
+            loaded_model_json = json_file.read()
+            json_file.close()
+            self.model = model_from_json(loaded_model_json)
+            # load weights into new model
+            self.model.load_weights("F:/minorproject/plantleafrecognition/model/model.h5")
+            print("Loaded model from disk")
+            return True
+        except:
+            return False
 
     def test(self,testimagepath):
         #testfolder="test"
@@ -105,9 +130,9 @@ class build:
         x=np.array(x);
         try:
             predictions = self.model.predict(x)
-            return predictions
+            return predictions[0]
         except:
-            return "Error1" #for not buulding model
+            return "Error1" #for not building model
 
         
 if __name__ == "__main__":
