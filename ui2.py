@@ -4,6 +4,15 @@ from PIL import ImageTk, Image
 
 class uifunctions:
 
+	def bootupmodel(self):
+		reawake=self.model.reawakemodel()
+		if reawake==False:
+			messagebox.showinfo("Attention","It looks like you haven't built the model.\n"+"Build it first.")
+			return False
+		messagebox.showinfo("Info","Model loaded. Ready to go !")
+		return True
+
+
 	def selectfile(self):
 		self.filename = filedialog.askopenfilename()
 		self.selectedFile_variable.set(self.filename)
@@ -30,17 +39,16 @@ class uifunctions:
 		return True
 
 	def scan(self):
-		if self.filename=="Select an image":
+		if self.filename=="Select an image" or not self.filename:
 			messagebox.showinfo("Info","You must select an image")
 			return True
 
-		reawake=self.model.reawakemodel()
-		if reawake==False:
-			messagebox.showinfo("Attention","It looks like you haven't built the model.\n"+
-				"Build it first.")
+		try:
+			testresultarray=self.model.test(self.filename)
+		except:
+			messagebox.showwarning("Alert","Model not ready. Boot up the model first.")
 			return False
-
-		testresultarray=self.model.test(self.filename)
+			
 		print (testresultarray) #array of probabilities
 		testresult=max(testresultarray)
 		accuracy=round(testresult*100,2)

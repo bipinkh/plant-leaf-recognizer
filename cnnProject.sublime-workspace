@@ -1,0 +1,546 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sh",
+				"showwarning\tfunction"
+			],
+			[
+				"sho",
+				"showinfo\tfunction"
+			],
+			[
+				"st",
+				"Style\tclass"
+			],
+			[
+				"con",
+				"configure"
+			],
+			[
+				"ta",
+				"tabs\tstatement"
+			],
+			[
+				"confi",
+				"configure\tfunction"
+			],
+			[
+				"sel",
+				"self\tparam"
+			],
+			[
+				"sele",
+				"selectfile"
+			],
+			[
+				"im",
+				"import\tkeyword"
+			],
+			[
+				"func",
+				"functions\tmodule"
+			],
+			[
+				"get",
+				"getresponse\tstatement"
+			],
+			[
+				"ex",
+				"except"
+			],
+			[
+				"re",
+				"return\tkeyword"
+			],
+			[
+				"Fla",
+				"False\tinstance"
+			],
+			[
+				"in",
+				"index\tfunction"
+			],
+			[
+				"te",
+				"testresult\tstatement"
+			],
+			[
+				"test",
+				"testresult\tstatement"
+			],
+			[
+				"T",
+				"True\tinstance"
+			],
+			[
+				"buil",
+				"buildmodel"
+			],
+			[
+				"s",
+				"showinfo\tfunction"
+			],
+			[
+				"fold",
+				"folderOK\tstatement"
+			],
+			[
+				"tk",
+				"tkFileDialog"
+			],
+			[
+				"tes",
+				"testfolder_button\tstatement"
+			],
+			[
+				"qu",
+				"quitwindow"
+			],
+			[
+				"tab",
+				"tab2_label\tstatement"
+			],
+			[
+				"tab2Te",
+				"tab2Text_variable\tstatement"
+			],
+			[
+				"tab2",
+				"tab2Text_variable"
+			],
+			[
+				"d",
+				"dbconnector\tmodule"
+			],
+			[
+				"train",
+				"trainfolder\tstatement"
+			],
+			[
+				"mode",
+				"modelStructure\tfunction"
+			],
+			[
+				"sca",
+				"scan_button\tstatement"
+			],
+			[
+				"sl",
+				"selectedFile_variable\tstatement"
+			],
+			[
+				"image",
+				"imagePanel"
+			],
+			[
+				"ima",
+				"image"
+			],
+			[
+				"def",
+				"defaultimage\tstatement"
+			],
+			[
+				"p",
+				"pack"
+			],
+			[
+				"imagepa",
+				"imagepath\tstatement"
+			],
+			[
+				"Ima",
+				"Image\tmodule"
+			],
+			[
+				"text",
+				"textvariable"
+			],
+			[
+				"Image",
+				"ImageTk\tmodule"
+			],
+			[
+				"selec",
+				"selectedFileName\tstatement"
+			],
+			[
+				"Imag",
+				"ImageTk\tmodule"
+			],
+			[
+				"se",
+				"selectedFileName\tstatement"
+			],
+			[
+				"file",
+				"filename\tstatement"
+			],
+			[
+				"label",
+				"label_tab1\tstatement"
+			],
+			[
+				"la",
+				"label_tab1\tstatement"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"ri",
+				"RIGHT\tstatement"
+			],
+			[
+				"model",
+				"models\tmodule"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"subl project1",
+			"django-admin --version",
+			"curr.close()",
+			"clear",
+			"import numpy",
+			"import MySql",
+			"python --version",
+			"pip --version",
+			"keras --version",
+			"git --version",
+			"testing_sublime.py",
+			"pip --version",
+			"install package"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/aiprojects/gui"
+	],
+	"file_history":
+	[
+		"/C/Users/bipin/Downloads/Compressed/RR-N-v5.8.3-20170713-x2-Official1/META-INF/com/google/android/updater-script",
+		"/C/Users/bipin/Downloads/Compressed/miui_HMNote3ProGlobal_7.7.6_a17d983307_6.0/META-INF/com/google/android/updater-script",
+		"/C/Users/bipin/Downloads/Compressed/RR-N-v5.8.3-20170713-x2-Official/META-INF/com/google/android/updater-script",
+		"/F/minorproject/plantleafrecognition/dbconnector.py",
+		"/F/minorproject/plantleafrecognition/main.py",
+		"/F/minorproject/plantleafrecognition/ui2.py",
+		"/F/aiprojects/facedetection/FaceDet/face.py",
+		"/F/minorproject/plantleafrecognition/ui.py",
+		"/C/Users/bipin/Downloads/Compressed/RR-N-v5.8.3-20170709-kenzo-Weekly/META-INF/com/google/android/update-binary",
+		"/C/Users/bipin/Downloads/Compressed/RR-N-v5.8.3-20170709-kenzo-Weekly/META-INF/com/google/android/updater-script",
+		"/F/codes/os-lab2.c",
+		"/F/minorproject/plantleafrecognition/_ui.py",
+		"/F/minorproject/plantleafrecognition/functions.py",
+		"/F/minorproject/plantleafrecognition/test.py",
+		"/F/minorproject/plantleafrecognition/modelHandle.py",
+		"/F/aiprojects/gui/notes.txt",
+		"/F/aiprojects/gui/gui2.py",
+		"/F/aiprojects/gui/gui-calculator.py",
+		"/F/aiprojects/gui/gui.py",
+		"/F/aiprojects/gui/manigui.py",
+		"/C/Users/bipin/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/F/aiprojects/leafrecog/code.py",
+		"/F/aiprojects/second.py",
+		"/F/aiprojects/gui/testing_sublime.py",
+		"/C/Users/bipin/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/C/Users/bipin/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/bipin/AppData/Roaming/Sublime Text 3/Packages/User/Git.sublime-settings"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			" "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 162.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "cnnProject.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 162.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

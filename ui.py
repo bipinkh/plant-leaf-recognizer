@@ -6,7 +6,7 @@ from PIL import ImageTk, Image
 import dbconnector
 import main
 import ui2
-
+ 
 
 class LeafRecognition(ui2.uifunctions):
 
@@ -21,7 +21,7 @@ class LeafRecognition(ui2.uifunctions):
 		self.master.minsize(width=600, height=400)
 
 		#variables and constants
-		self.defaultimage="C:/Users/bipin/Downloads/cc.jpg"
+		self.defaultimage="banner.jpg"
 		self.filename="Select an image"
 		self.selectedFile_variable=StringVar()
 		self.selectedFile_variable.set(self.filename)
@@ -32,14 +32,13 @@ class LeafRecognition(ui2.uifunctions):
 		self.trainfolder_variable=StringVar()
 		self.trainfolder_variable.set(self.trainfolderText)
 
-
-		
 		#dimensions
 		self.tab_height=400
-		self.tab_width=550
+		self.tab_width=600
 
 		#tabs
 		self.tabs = ttk.Notebook(root)
+		self.tabs.configure(background="#fff")
 		self.tab1 = ttk.Frame(self.tabs, width=self.tab_width, height=self.tab_height)
 		self.tab2 = ttk.Frame(self.tabs, width=self.tab_width, height=self.tab_height)
 		self.tab3 = ttk.Frame(self.tabs, width=self.tab_width, height=self.tab_height)
@@ -49,6 +48,7 @@ class LeafRecognition(ui2.uifunctions):
 
 		#tab-1 widgets
 		self.selectedFile_label = Label(self.tab1,textvariable=self.selectedFile_variable)
+		self.load_model_button = Button(self.tab1, text="Boot Up Model", command=self.bootupmodel)
 		self.select_button = Button(self.tab1, text="Select Image", command=self.selectfile)
 		self.scan_button = Button(self.tab1, text="Identify Image", command=self.scan)
 		self.close_button = Button(self.tab1, text = "Quit", command=self.quitwindow)
@@ -59,24 +59,25 @@ class LeafRecognition(ui2.uifunctions):
 		self.build_button = Button(self.tab2, text="Build Model", command=self.buildmodel)
 		self.tab2_label = Label(self.tab2,textvariable=self.tab2Text_variable)
 
-		#image
+		#default image
 		img1=Image.open(self.defaultimage)
-		img1=img1.resize((220,300), Image.ANTIALIAS)
+		img1=img1.resize((600,350), Image.ANTIALIAS)
 		img1 = ImageTk.PhotoImage(img1)
 		self.imagePanel = ttk.Label(self.tab1,image=img1)
 		self.imagePanel.image=img1
-
+		print ("check")
 		self.layout()
 
 
 	def layout(self):
+		self.imagePanel.place(x=0,y=0)
 		self.tabs.grid(column=0)
 		#layout-tab1
-		self.select_button.pack()
-		self.scan_button.pack()
-		self.close_button.place(x=500,y=350)
-		self.imagePanel.pack()
-		self.selectedFile_label.pack()
+		self.selectedFile_label.place(x=5, y=350)
+		self.close_button.place(x=560,y=370)
+		self.load_model_button.place(x=5,y=370)
+		self.select_button.place(x=105,y=370)
+		self.scan_button.place(x=195,y=370)
 		#layout-tab2
 		self.trainfolder_label.pack()
 		self.trainfolder_button.pack()
@@ -84,8 +85,6 @@ class LeafRecognition(ui2.uifunctions):
 		self.tab2_label.place(x=100,y=150)
 
 		return True
-
-
 	
 root = Tk()
 my_gui = LeafRecognition(root)

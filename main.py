@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Jun 30 08:36:06 2017
-Code and Algorithm cited from : thesemicolon
+The document is copyright of Authors.
 @author: bipin
 """
 import os
@@ -124,7 +124,6 @@ class build:
         imrs=img_to_array(imrs)/255;
         imrs=imrs.transpose(2,0,1);
         imrs=imrs.reshape(3,build.m,build.n);
-        
         x=[]
         x.append(imrs)
         x=np.array(x);
