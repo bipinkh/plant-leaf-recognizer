@@ -39,4 +39,9 @@ class main:
 		print("database closed")
 		return True
 
+	def getall(self,position):
+		command ="SELECT * FROM plantdetails WHERE id ="+str(position)
+		main.cur.execute(command)
+		data=main.cur.fetchone()
+		return data
 

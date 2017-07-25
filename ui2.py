@@ -3,6 +3,9 @@ from tkinter import messagebox
 from PIL import ImageTk, Image
 
 class uifunctions:
+	def __init__(self, master):
+		return True
+
 
 	def bootupmodel(self):
 		reawake=self.model.reawakemodel()
@@ -11,7 +14,6 @@ class uifunctions:
 			return False
 		messagebox.showinfo("Info","Model loaded. Ready to go !")
 		return True
-
 
 	def selectfile(self):
 		self.filename = filedialog.askopenfilename()
@@ -27,10 +29,12 @@ class uifunctions:
 
 	def displayimage(self):
 		img2 = Image.open(self.filename)
-		img2 = img2.resize((120,200), Image.ANTIALIAS)
+		img2 = img2.resize((140,220), Image.ANTIALIAS)
 		img2 = ImageTk.PhotoImage(img2)
-		self.imagePanel.configure(image=img2)
-		self.imagePanel.image=img2
+		#self.imagePanel.configure(image=img2)
+		#self.imagePanel.image=img2
+		self.imagePanel2.configure(image=img2)
+		self.imagePanel2.image=img2
 		return True
 
 	def quitwindow(self):
@@ -41,7 +45,7 @@ class uifunctions:
 	def scan(self):
 		if self.filename=="Select an image" or not self.filename:
 			messagebox.showinfo("Info","You must select an image")
-			return True
+			return False
 
 		try:
 			testresultarray=self.model.test(self.filename)
@@ -58,16 +62,7 @@ class uifunctions:
 				break
 			else:
 				position+=1
-
-		desc = self.source.getdescription(position)
-		name = self.source.getname(position)
-		if (desc=="Error2" or name=="Error2"):
-			messagebox.showinfo("Info","Database access error")
-			return False
-
-		messagebox.showinfo("Output","Accuracy Rate: "+str(accuracy)+"%\n Name: "+name+
-			"\nOtherNames:\n"+desc)
-		return True
+		return position,accuracy
 
 
 	def buildmodel(self):
