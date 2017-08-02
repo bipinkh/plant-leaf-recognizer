@@ -85,10 +85,11 @@ class build:
         self.model.add(Dropout(0.5));
         self.model.add(Dense(nb_classes));
         self.model.add(Activation('softmax'));
-        self.model.compile(loss='categorical_crossentropy',optimizer='adadelta',metrics=['accuracy'])
+        self.model.compile(loss='categorical_crossentropy',optimizer='adadelta',metrics=['accuracy']) #LR=1 default
         nb_epochs=10;
         batch_size=16;
         self.model.fit(x_train,Y_train,batch_size=batch_size,epochs=nb_epochs,verbose=1,validation_data=(x_test, Y_test))
+
 
     
     def storemodel(self):
@@ -115,10 +116,6 @@ class build:
             return False
 
     def test(self,testimagepath):
-        #testfolder="test"
-        #files=os.listdir(testfolder);
-        #img=files[0] 
-        #im = Image.open(testfolder + '/' + img);
         im=Image.open(testimagepath)
         imrs = im.resize((build.m,build.n))
         imrs=img_to_array(imrs)/255;
