@@ -110,12 +110,12 @@ class LeafRecognition(ui2.uifunctions):
 		TextHeading1 = "Accuracy:"
 		TextHeading2 = "Name:"
 		TextHeading3 = "Scientific Name:"
-		TextHeading4 = "Species:"
+		TextHeading9 = "More On:"
 		TextHeading5 = "Other Names:"
 		TextHeading6 = "Dimension:"
 		TextHeading7 = "Flowers & Fruits:"
 		TextHeading8 = "Climate:"
-		TextHeading9= "Blooming Season:"
+		TextHeading4= "Blooming Season:"
 
 		LabelHeading1 = Label(self.tab3, text=TextHeading1, font="Helvetica 12 bold")
 		LabelHeading2 = Label(self.tab3, text=TextHeading2, font="Helvetica 12 bold")
@@ -130,12 +130,12 @@ class LeafRecognition(ui2.uifunctions):
 		TextResult1 = str(accuracy)+"%"
 		TextResult2 = information[1]
 		TextResult3 = information[2]
-		TextResult4 = information[3]
+		TextResult9 = information[3]
 		TextResult5 = information[4]
 		TextResult6 = information[5]
 		TextResult7 = information[6]
 		TextResult8 = information[7]
-		TextResult9 = information[8]
+		TextResult4 = information[8]
 		TextResult10 = information[9]
 
 		resultVariable1= StringVar(value=TextResult1)
@@ -170,22 +170,22 @@ class LeafRecognition(ui2.uifunctions):
 		LabelHeading1.place(x=142,y=5)
 		LabelHeading2.place(x=142,y=25)
 		LabelHeading3.place(x=142,y=45)
-		LabelHeading4.place(x=142,y=65)
+		LabelHeading9.place(x=142,y=65)
 		LabelHeading5.place(x=142,y=85)
 		LabelHeading8.place(x=142,y=105)
 		LabelHeading6.place(x=142,y=125)
 		LabelHeading7.place(x=142,y=145)
-		LabelHeading9.place(x=142,y=165)
+		LabelHeading4.place(x=142,y=165)
 
 		LabelResult1.place(x=288,y=5) #accuracy
 		LabelResult2.place(x=288,y=25) #name
 		LabelResult3.place(x=288,y=45) #scientific name
-		LabelResult4.place(x=288,y=65) #species
+		LabelResult9.place(x=288,y=65) #blooming
 		LabelResult5.place(x=288,y=85) #other names
 		LabelResult6.place(x=288,y=105) # blooming season
 		LabelResult7.place(x=288,y=125) #climate
 		LabelResult8.place(x=288,y=145) #dimension
-		LabelResult9.place(x=288,y=165) # flowers and fruits
+		LabelResult4.place(x=288,y=165) # flowers and fruits
 		#description = scrolledtext.ScrolledText(self.tab3, wrap=WORD, width=85, height=11, font="Helvetica 12")
 		#description.place(x=0,y=240)
 		#description.insert(INSERT,result10)
