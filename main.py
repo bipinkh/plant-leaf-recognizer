@@ -126,6 +126,8 @@ class build:
         x=np.array(x);
         try:
             predictions = self.model.predict(x)
+            print("predictions:")
+            print(predictions)
             return predictions[0]
         except:
             return "Error1" #for not building model

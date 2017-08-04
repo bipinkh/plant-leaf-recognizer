@@ -9,6 +9,7 @@ import main
 import ui2
 import webbrowser
 import textwrap
+import att
 
  
 
@@ -66,6 +67,7 @@ class LeafRecognition(ui2.uifunctions):
 		self.build_button = Button(self.tab2, text="Build Model", command=self.buildmodel)
 		self.tab2_label = Label(self.tab2,textvariable=self.tab2Text_variable)
 
+
 		#default image
 		img1=Image.open(self.defaultimage)
 		img1=img1.resize((700,350), Image.ANTIALIAS)
@@ -89,10 +91,10 @@ class LeafRecognition(ui2.uifunctions):
 		self.select_button.place(x=105,y=370)
 		self.scan_button.place(x=195,y=370)
 		#layout-tab2
-		self.trainfolder_label.place(x=175,y=25)
-		self.trainfolder_button.place(x=0,y=25)
-		self.build_button.place(x=0,y=150)
-		self.tab2_label.place(x=90,y=150)
+		self.trainfolder_label.place(x=195,y=55)
+		self.trainfolder_button.place(x=195,y=25)
+		self.build_button.place(x=195,y=190)
+		self.tab2_label.place(x=195,y=220)
 		return True
 
 	def scanbuttonTrigger(self):
@@ -106,6 +108,7 @@ class LeafRecognition(ui2.uifunctions):
 		return True
 
 	def resultdisplay(self,accuracy,information):
+
 		self.tab3.pack_forget()
 		TextHeading1 = "Accuracy:"
 		TextHeading2 = "Name:"
@@ -127,16 +130,16 @@ class LeafRecognition(ui2.uifunctions):
 		LabelHeading8 = Label(self.tab3, text=TextHeading8, font="Helvetica 12 bold")
 		LabelHeading9 = Label(self.tab3, text=TextHeading9, font="Helvetica 12 bold")
 
-		TextResult1 = str(accuracy)+"%"
-		TextResult2 = information[1]
-		TextResult3 = information[2]
-		TextResult9 = information[3]
-		TextResult5 = information[4]
-		TextResult6 = information[5]
-		TextResult7 = information[6]
-		TextResult8 = information[7]
-		TextResult4 = information[8]
-		TextResult10 = information[9]
+		TextResult1 = str(accuracy)+"%"+"       "
+		TextResult2 = information[1]+"                                                               "
+		TextResult3 = information[2]+"                                                               "
+		TextResult9 = information[3]+"                                                               "
+		TextResult5 = information[4]+"                                                               "
+		TextResult6 = information[5]+"                                                               "
+		TextResult7 = information[6]+"                                                               "
+		TextResult8 = information[7]+"                                                               "
+		TextResult4 = information[8]+"                                                               "
+		TextResult10 = information[9]+"                                                              "
 
 		resultVariable1= StringVar(value=TextResult1)
 		resultVariable2= StringVar(value=TextResult2)
@@ -149,7 +152,7 @@ class LeafRecognition(ui2.uifunctions):
 		resultVariable9= StringVar(value=TextResult9)
 		resultVariable10= StringVar()
 		result10 = str(information[9])
-		result10 = textwrap.fill(result10, 105)
+		result10 = textwrap.fill(result10, 95)
 		resultVariable10.set(result10)
 
 		LabelResult1 = Label(self.tab3,textvariable=resultVariable1, font="Helvetica 12")
@@ -191,6 +194,8 @@ class LeafRecognition(ui2.uifunctions):
 		#description.insert(INSERT,result10)
 
 		LabelResult10.place(x=0,y=225) #details
+
+
 
 		return True
 		

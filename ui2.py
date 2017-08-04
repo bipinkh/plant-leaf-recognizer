@@ -62,6 +62,7 @@ class uifunctions:
 				break
 			else:
 				position+=1
+		position=position+1
 		return position,accuracy
 
 
