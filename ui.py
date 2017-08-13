@@ -11,7 +11,7 @@ import webbrowser
 import textwrap
 import att
 
- 
+
 
 class LeafRecognition(ui2.uifunctions):
 
